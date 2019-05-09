@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Configurations\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GreenHome.Data\GreenHome.Data.csproj" />
+    <ProjectReference Include="..\GreenHome.Infrastructure\GreenHome.Infrastructure.csproj" />
+    <ProjectReference Include="..\GreenHome.Utilities\GreenHome.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>
