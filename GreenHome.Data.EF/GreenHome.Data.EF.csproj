@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Configurations\" />
-    <Folder Include="Extensions\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 
@@ -14,6 +13,12 @@
     <ProjectReference Include="..\GreenHome.Data\GreenHome.Data.csproj" />
     <ProjectReference Include="..\GreenHome.Infrastructure\GreenHome.Infrastructure.csproj" />
     <ProjectReference Include="..\GreenHome.Utilities\GreenHome.Utilities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.entityframeworkcore\2.0.2\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
