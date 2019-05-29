@@ -9,6 +9,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GreenHome.Data\GreenHome.Data.csproj" />
     <ProjectReference Include="..\GreenHome.Infrastructure\GreenHome.Infrastructure.csproj" />
     <ProjectReference Include="..\GreenHome.Utilities\GreenHome.Utilities.csproj" />
