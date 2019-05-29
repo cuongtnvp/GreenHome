@@ -8,9 +8,24 @@ using System.Text;
 
 namespace GreenHome.Data.Entities
 {
-    [Table("RelationShip")]
-    public class RelationShip : DomainEntity<int>, IDateTracking, IAccountTracking
+    [Table("Relationship")]
+    public class Relationship : DomainEntity<int>, IDateTracking, IAccountTracking
     {
+        public Relationship()
+        {
+            StudentRelationships = new List<StudentRelationship>();
+        }
+
+        public Relationship(string name, int idCreated, int idModified, DateTime dateCreated, DateTime dateModified)
+        {
+            Name = name ;
+            IdCreated = idCreated;
+            IdModified = idModified;
+            DateCreated = dateCreated;
+            DateModified = dateModified;
+         
+        }
+
         [StringLength(10)]
         [Required]
         public string Name { get; set; }
@@ -20,6 +35,6 @@ namespace GreenHome.Data.Entities
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
 
-        public virtual ICollection<StudentRelationShip> StudentRelationShips { set; get; }
+        public virtual ICollection<StudentRelationship> StudentRelationships { set; get; }
     }
 }

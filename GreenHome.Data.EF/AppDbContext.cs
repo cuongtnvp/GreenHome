@@ -19,9 +19,9 @@ namespace GreenHome.Data.EF
         }
         public DbSet<Function> Functions { get; set; }
         public DbSet<SystemConfig> SystemConfigs { get; set; }
-        public DbSet<RelationShip> RelationShips { set; get; }
+        public DbSet<Relationship> Relationships { set; get; }
         public DbSet<Student> Students { set; get; }
-        public DbSet<StudentRelationShip> StudentRelationShips { set; get; }
+        public DbSet<StudentRelationship> StudentRelationships { set; get; }
         public DbSet<AppRole> AppRoles { set; get; }
         public DbSet<AppUser> AppUsers { set; get; }
         protected override void OnModelCreating(ModelBuilder builder)

@@ -1,20 +1,17 @@
-﻿using GreenHome.Data.Interfaces;
-using GreenHome.Infrastructure.SharedKernel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace GreenHome.Data.Entities
+namespace GreenHome.Application.ViewModels.Relationship
 {
-    [Table("Students")]
-    public class Student:DomainEntity<int>,IDateTracking,IAccountTracking
+    public class StudentViewModel
     {
+        public int Id { get; set; }
         [StringLength(20)]
         [Required]
         public string FullName { get; set; }
-        [StringLength(10)]       
+        [StringLength(10)]
         public string NickName { get; set; }
         public DateTime? BirthDay { get; set; }
         [StringLength(50)]
@@ -27,6 +24,6 @@ namespace GreenHome.Data.Entities
         public int IdCreated { get; set; }
         public int IdModified { get; set; }
 
-       public virtual ICollection<StudentRelationship> StudentRelationships { set; get; }
+        public ICollection<StudentRelationshipViewModel> StudentRelationships { set; get; }
     }
 }

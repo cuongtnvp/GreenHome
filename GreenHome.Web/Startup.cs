@@ -13,6 +13,11 @@ using GreenHome.Web.Models;
 using GreenHome.Web.Services;
 using GreenHome.Data.EF;
 using GreenHome.Data.Entities;
+using AutoMapper;
+using GreenHome.Application.Interfaces;
+using GreenHome.Data.IRepositories;
+using GreenHome.Data.EF.Repositories;
+using GreenHome.Application.Implementation;
 
 namespace GreenHome.Web
 {
@@ -38,14 +43,21 @@ namespace GreenHome.Web
             // Add application services.
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+
+            services.AddSingleton(Mapper.Configuration);
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService < AutoMapper.IConfigurationProvider>(), sp.GetService));
+
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<DbInitializer>();
+
+            services.AddTransient<IRelationshipRepository,RelationshipRepository>();
+            services.AddTransient<IRelationshipService,RelationshipService>();
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env,DbInitializer dbInitializer)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -68,7 +80,7 @@ namespace GreenHome.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            dbInitializer.Seed().Wait();
+           
         }
     }
 }

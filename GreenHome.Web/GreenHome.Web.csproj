@@ -7,6 +7,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GreenHome.Application\GreenHome.Application.csproj" />
     <ProjectReference Include="..\GreenHome.Data.EF\GreenHome.Data.EF.csproj" />
     <ProjectReference Include="..\GreenHome.Data\GreenHome.Data.csproj" />
     <ProjectReference Include="..\GreenHome.Infrastructure\GreenHome.Infrastructure.csproj" />
