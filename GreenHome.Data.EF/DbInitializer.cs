@@ -52,6 +52,11 @@ namespace GreenHome.Data.EF
                     UserName = "admin",
                     FullName = "Administrator",
                     Email = "admin@gmail.com",
+                    DateCreated = DateTime.Now,
+                    DateModified=DateTime.Now,
+                    Status = Status.Active,
+
+                
 
                 }, "123654$");
                 var user = await _userManager.FindByNameAsync("admin");

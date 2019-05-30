@@ -7,7 +7,7 @@ namespace GreenHome.Application.AutoMapper
 {
     public class AutoMapperConfig
     {
-        public static MapperConfiguration RegisterMapping()
+        public static MapperConfiguration RegisterMappings()
         {
             return new MapperConfiguration(cfg =>
             {
