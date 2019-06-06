@@ -1,4 +1,4 @@
-﻿
+﻿@using GreenHome.Web.Extensions  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>John Doe</h2>
+                            <h2>@User.GetSpecificClaim("FullName")</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -197,7 +197,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="~/admin-side/images/img.jpg" alt="">John Doe
+                                    <img src="~/admin-side/images/img.jpg" alt="">@User.GetSpecificClaim("FullName")
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -223,7 +223,7 @@
                                         <a>
                                             <span class="image"><img src="~/admin-side/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
+                                                <span>@User.GetSpecificClaim("FullName")</span>
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
@@ -235,7 +235,7 @@
                                         <a>
                                             <span class="image"><img src="~/admin-side/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
+                                                <span>@User.GetSpecificClaim("FullName")</span>
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
@@ -247,7 +247,7 @@
                                         <a>
                                             <span class="image"><img src="~/admin-side/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
+                                                <span>@User.GetSpecificClaim("FullName")</span>
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
@@ -259,7 +259,7 @@
                                         <a>
                                             <span class="image"><img src="~/admin-side/images/img.jpg" alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
+                                                <span>@User.GetSpecificClaim("FullName")</span>
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">
@@ -331,9 +331,16 @@
 
 
 
-    <script src="~/lib/notifyjs/notify-metro.js"></script>
+
     <script src="~/lib/notifyjs/notify.js"></script>
+
+    <script src="~/lib/notifyjs/notify-metro.js"></script>
     <script src="~/lib/bootbox/src/bootbox.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/additional-methods.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery-validation/localization/messages_vi.js"></script>
+
     <script src="~/app/Controllers/shared/cuong.js"></script>
     <!-- Custom Theme Scripts -->
 

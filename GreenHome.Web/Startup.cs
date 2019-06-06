@@ -13,6 +13,9 @@ using GreenHome.Data.IRepositories;
 using GreenHome.Data.EF.Repositories;
 using GreenHome.Application.Interfaces;
 using GreenHome.Application.Implementation;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
+using GreenHome.Web.Helpers;
 
 namespace GreenHome.Web
 {
@@ -66,21 +69,22 @@ namespace GreenHome.Web
 
             services.AddTransient<DbInitializer>();
 
-
+            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
             services.AddTransient<IRelationshipRepository,RelationshipRepository>();
 
             services.AddTransient<IRelationshipService, RelationshipService>();
 
-            services.AddMvc();
+            services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddFile("Logs/cuong-{Date}.txt");
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
                 app.UseDatabaseErrorPage();
             }
             else
@@ -99,9 +103,9 @@ namespace GreenHome.Web
                     template: "{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(name: "areaRoute",
-                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                    template: "{area:exists}/{controller=Login}/{action=Index}/{id?}");
             });
-           
+
         }
     }
 }

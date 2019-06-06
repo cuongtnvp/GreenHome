@@ -5,13 +5,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GreenHome.Web.Models;
+using Microsoft.AspNetCore.Authorization;
+using GreenHome.Web.Extensions;
 
 namespace GreenHome.Web.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
         public IActionResult Index()
         {
+            var email = User.GetSpecificClaim("Email");
             return View();
         }
 
