@@ -68,13 +68,17 @@ namespace GreenHome.Web
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<DbInitializer>();
-
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
-            services.AddTransient<IRelationshipRepository,RelationshipRepository>();
-
-            services.AddTransient<IRelationshipService, RelationshipService>();
+          
 
             services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+
+            //Repositories
+            services.AddTransient<IRelationshipRepository, RelationshipRepository>();
+            services.AddTransient<IFunctionRepository, FunctionRepository>();
+            //Serrvices
+            services.AddTransient<IRelationshipService, RelationshipService>();
+            services.AddTransient<IFunctionService, FunctionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

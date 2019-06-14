@@ -1,10 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <UserSecretsId>aspnet-GreenHome.Web-4BB87F0A-CE0C-42E7-A486-07587B9335EA</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <Content Include="wwwroot\lib\parsleyjs\bower_components\bootstrap\bower.json" />
     <Content Include="wwwroot\lib\parsleyjs\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
@@ -22,8 +20,6 @@
     <Content Include="wwwroot\lib\parsleyjs\bower_components\uwidget\bower.json" />
     <Content Include="wwwroot\lib\parsleyjs\bower_components\uwidget\uwidget.css" />
   </ItemGroup>
-
-
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="8.1.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.1.0" />
@@ -33,14 +29,14 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.1.0" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="18.1.5" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="1.4.7" />
   </ItemGroup>
-
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\GreenHome.Application\GreenHome.Application.csproj" />
     <ProjectReference Include="..\GreenHome.Data.EF\GreenHome.Data.EF.csproj" />
@@ -48,7 +44,6 @@
     <ProjectReference Include="..\GreenHome.Infrastructure\GreenHome.Infrastructure.csproj" />
     <ProjectReference Include="..\GreenHome.Utilities\GreenHome.Utilities.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="wwwroot\lib\parsleyjs\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
     <None Include="wwwroot\lib\parsleyjs\bower_components\bootstrap\dist\js\bootstrap.js" />
@@ -207,5 +202,4 @@
     <None Include="wwwroot\lib\parsleyjs\bower_components\uwidget\uwidget.js" />
     <None Include="wwwroot\lib\parsleyjs\bower_components\uwidget\uwidget.less" />
   </ItemGroup>
-
 </Project>

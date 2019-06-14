@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GreenHome.Application.ViewModels.Relationship;
+using GreenHome.Application.ViewModels.System;
 using GreenHome.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace GreenHome.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Relationship, RelationshipViewModel>();
+            CreateMap<Function, FunctionViewModel>();
         }
     }
 }
